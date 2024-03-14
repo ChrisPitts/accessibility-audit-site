@@ -1,0 +1,166 @@
+{
+	"principles": {
+		"1": {
+			"title": "Percievable",
+			"description": "Information and user interface components must be presentable to users in ways they can perceive.",
+			"guidelines": {
+				"1": {
+					"title": "Text Alternatives",
+					"description": "Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.",
+					"sections": {
+						"1": {
+							"level": "A",
+							"title": "Non-text Content",
+							"description": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed below.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html"
+						}
+					}
+				},
+				"2": {
+					"title": "Time-based Media",
+					"description": "Provide alternatives for time-based media.",
+					"sections": {
+						"1": {
+							"level": "A",
+							"title": "Audio-only and Video-only (Prerecorded)",
+							"description": "For prerecorded audio-only and prerecorded video-only media, the following are true, except when the audio or video is a media alternative for text and is clearly labeled as such:",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html"
+						},
+						"2": {
+							"level": "A",
+							"title": "Captions (Prerecorded)",
+							"description": "Captions are provided for all prerecorded audio content in synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html"
+						},
+						"3": {
+							"level": "A",
+							"title": "Audio Description or Media Alternative (Prerecorded)",
+							"description": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html"
+						},
+						"4": {
+							"level": "AA",
+							"title": "Captions (Live)",
+							"description": "Captions are provided for all live audio content in synchronized media.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/captions-live.html"
+						},
+						"5": {
+							"level": "AA",
+							"title": "Audio Description (Prerecorded)",
+							"description": "Audio description is provided for all prerecorded video content in synchronized media.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html"
+						}
+					}
+				},
+				"3": {
+					"title": "Adaptable",
+					"description": "Create content that can be presented in different ways (for example simpler layout) without losing information or structure.",
+					"sections": {
+						"1": {
+							"level": "A",
+							"title": "Info and Relationships",
+							"description": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+						},
+						"2": {
+							"level": "A",
+							"title": "Meaningful Sequence",
+							"description": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html"
+						},
+						"3": {
+							"level": "A",
+							"title": "Sensory Characteristics",
+							"description": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, color, size, visual location, orientation, or sound.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html"
+						},
+						"4": {
+							"level": "AA",
+							"title": "Orientation",
+							"description": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/orientation.html"
+						},
+						"5": {
+							"level": "AA",
+							"title": "Identify Input Purpose",
+							"description": "The purpose of each input field collecting information about the user can be programmatically determined when:",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+						}
+					}
+				},
+				"4": {
+					"title": "Distinguishible",
+					"description": "Make it easier for users to see and hear content including separating foreground from background.",
+					"sections": {
+						"1": {
+							"level": "A",
+							"title": "Use of Color",
+							"description": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html"
+						},
+						"2": {
+							"level": "A",
+							"title": "Audio Control",
+							"description": "If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html"
+						},
+						"3": {
+							"level": "AA",
+							"title": "Contrast (Minimum)",
+							"description": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+						},
+						"4": {
+							"level": "AA",
+							"title": "Resize Text",
+							"description": "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html"
+						},
+						"5": {
+							"level": "AA",
+							"title": "Images of Text",
+							"description": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except for the following:",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html"
+						},
+						"10": {
+							"level": "AA",
+							"title": "Reflow",
+							"description": "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html"
+						},
+						"11": {
+							"level": "AA",
+							"title": "Non-text Contrast",
+							"description": "The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+						},
+						"12": {
+							"level": "AA",
+							"title": "Text Spacing",
+							"description": "In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html"
+						},
+						"13": {
+							"level": "AA",
+							"title": "Content on Hover or Focus",
+							"description": "Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:",
+							"link": "https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html"
+						}
+					}
+				}
+			}
+		},
+		"2": {
+			"title": "Operable",
+			"description": "User interface components and navigation must be operable."
+		},
+		"3": {
+			"title": "Understandable",
+			"description": "Information and the operation of the user interface must be understandable."
+		},
+		"4": {
+			"title": "Robust",
+			"description": "Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies."
+		}
+	}
+}

@@ -152,15 +152,18 @@
 		},
 		"2": {
 			"title": "Operable",
-			"description": "User interface components and navigation must be operable."
+			"description": "User interface components and navigation must be operable.",
+			"guidelines": {}
 		},
 		"3": {
 			"title": "Understandable",
-			"description": "Information and the operation of the user interface must be understandable."
+			"description": "Information and the operation of the user interface must be understandable.",
+			"guidelines": {}
 		},
 		"4": {
 			"title": "Robust",
-			"description": "Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies."
+			"description": "Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies.",
+			"guidelines": {}
 		}
 	}
 }

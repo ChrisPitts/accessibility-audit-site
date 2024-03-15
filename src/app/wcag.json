@@ -153,7 +153,33 @@
 		"2": {
 			"title": "Operable",
 			"description": "User interface components and navigation must be operable.",
-			"guidelines": {}
+			"guidelines": {
+				"1": {
+					"title": "Keyboard Accessible",
+					"description": "Make all functionality available from a keyboard",
+					"sections": {}
+				},
+				"2": {
+					"title": "Enough Time",
+					"description": "Provide users enough time to read and use content.",
+					"sections": {}
+				},
+				"3": {
+					"title": "Seizures and Physical Reactions",
+					"description": "Do not design content in a way that is known to cause seizures or physical reactions.",
+					"sections": {}
+				},
+				"4": {
+					"title": "Navigable",
+					"description": "Provide ways to help users navigate, find content, and determine where they are.",
+					"sections": {}
+				},
+				"5": {
+					"title": "Input Modalities",
+					"description": "Make it easier for users to operate functionality through various inputs beyond keyboard.",
+					"sections": {}
+				}
+			}
 		},
 		"3": {
 			"title": "Understandable",

@@ -2,4 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    box-sizing: border-box;
+}
 
+.audit-circle{
+    text-align: center;
+    aspect-ratio: 1/1;
+    width: 5rem;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    position: relative;
+
+    
+}
+
+.audit-circle::after{
+        content: '';
+        position: absolute;
+        left: -15%;
+        top: -15%;
+        width: 130%;
+        height: 130%;
+        z-index: -1;
+        border-radius: 50%;
+        // background-color: black;
+        background: conic-gradient(var(--data-color) calc(var(--data-progress) * 360deg), black 0deg);
+    }

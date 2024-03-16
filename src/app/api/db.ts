@@ -16,3 +16,8 @@ export async function getAudits(username: string)
 {
     return prisma.$queryRaw`SELECT * FROM Audit WHERE username=${username}`;
 }
+
+export async function getPrincipleAudits(username: string, principle: number)
+{
+    return prisma.$queryRaw`SELECT * FROM Audit WHERE username=${username} AND principle=${principle}`;
+}

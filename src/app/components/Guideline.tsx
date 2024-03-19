@@ -12,7 +12,7 @@ export default function Guideline({
 }) {
 	return (
 		<>
-			<h3 className='text-lg font-semibold underline'>
+			<h3 className='text-lg font-bold underline'>
 				{principleNumber}.{guidelineNumber} {guideline.title}
 			</h3>
 			<p>{guideline.description}</p>

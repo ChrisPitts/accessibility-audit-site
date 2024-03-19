@@ -1,11 +1,12 @@
 import React from 'react';
+import Section from './Section';
 
 export default function Guideline({
 	guideline,
 	guidelineNumber,
 	principleNumber,
 }: {
-	guideline: { title: string; description: string };
+	guideline: { title: string; description: string; sections: {} };
 	guidelineNumber: string;
 	principleNumber: number;
 }) {
@@ -15,6 +16,18 @@ export default function Guideline({
 				{principleNumber}.{guidelineNumber} {guideline.title}
 			</h3>
 			<p>{guideline.description}</p>
+			{Object.entries(guideline.sections).map(
+				([key, value]: [key: string, value: any]) => {
+					return (
+						<Section
+							section={value}
+							sectionNumber={key}
+							guidelineNumber={guidelineNumber}
+							principleNumber={principleNumber}
+						/>
+					);
+				}
+			)}
 		</>
 	);
 }

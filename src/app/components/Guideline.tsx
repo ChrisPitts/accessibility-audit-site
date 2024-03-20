@@ -11,26 +11,34 @@ export default function Guideline({
 	principleNumber: number;
 	})
 {
-	
+	const [expanded, setExpanded] = useState(false);
+	let toggleExpand = () =>
+	{
+		setExpanded(!expanded);
+	}
 	
 	return (
 		<>
-			<h3 className='text-lg font-bold underline'>
-				{principleNumber}.{guidelineNumber} {guideline.title}
-			</h3>
-			<p>{guideline.description}</p>
-			{Object.entries(guideline.sections).map(
-				([key, value]: [key: string, value: any]) => {
-					return (
-						<Section
-							section={value}
-							sectionNumber={key}
-							guidelineNumber={guidelineNumber}
-							principleNumber={principleNumber}
-						/>
-					);
-				}
-			)}
+			<button className='block' onClick={toggleExpand}>
+				<h3 className='text-lg font-bold underline'>
+					{principleNumber}.{guidelineNumber} {guideline.title}
+				</h3>
+				<p>{guideline.description}</p>
+			</button>
+			<div className={expanded ? '' : 'hidden'}>
+				{Object.entries(guideline.sections).map(
+					([key, value]: [key: string, value: any]) => {
+						return (
+							<Section
+								section={value}
+								sectionNumber={key}
+								guidelineNumber={guidelineNumber}
+								principleNumber={principleNumber}
+							/>
+						);
+					}
+				)}
+			</div>
 		</>
 	);
 }

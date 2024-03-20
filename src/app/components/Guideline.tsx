@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Section from './Section';
 
 export default function Guideline({
@@ -9,7 +9,10 @@ export default function Guideline({
 	guideline: { title: string; description: string; sections: {} };
 	guidelineNumber: string;
 	principleNumber: number;
-}) {
+	})
+{
+	
+	
 	return (
 		<>
 			<h3 className='text-lg font-bold underline'>

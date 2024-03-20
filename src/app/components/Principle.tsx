@@ -1,18 +1,21 @@
-// import React, { useState } from 'react';
+'use client'
+import { useState } from 'react';
 import Guideline from './Guideline';
-import { getPrincipleAudits } from '../api/db';
+import { Audit } from '@prisma/client';
 
-export default async function Principle({
+export default function Principle({
 	principle,
 	principleNumber,
 	username,
+	audits
 }: {
 	principle: { title: string; description: string; guidelines: any };
 	principleNumber: number;
-	username: string;
+		username: string;
+		audits: Audit[];
 }) {
-	const audits: any = await getPrincipleAudits(username, principleNumber);
-
+	
+	// console.log(`Principle ${principleNumber}`, audits)
 	let passedAudits = 0;
 	for (let i = 0; i < audits.length; i++) {
 		if (audits[i].pass) passedAudits++;
@@ -20,12 +23,19 @@ export default async function Principle({
 
 	const ratio = audits.length > 0 ? passedAudits / audits.length : 0;
 
-	// const [expanded, setExpanded] = useState(false);
+	const [expanded, setExpanded] = useState(false);
+
+	let toggleExpand = () =>
+	{
+		console.log(!expanded);
+		setExpanded(!expanded);
+		
+	}
 
 	let circleColor = ratio === 1 ? 'green' : ratio > 0.6 ? 'yellow' : 'red';
 
 	return (
-		<>
+		<button className='block w-full' onClick={toggleExpand}>
 			<div className='dropdown-container'>
 				<div className='container-top'>
 					<h2 className='text-lg font-extrabold'>
@@ -49,18 +59,19 @@ export default async function Principle({
 
 				<p>{principle.description}</p>
 			</div>
-
-			{Object.entries(principle.guidelines).map(
-				([key, value]: [key: string, value: any]) => {
-					return (
-						<Guideline
-							guideline={value}
-							guidelineNumber={key}
-							principleNumber={principleNumber}
-						/>
-					);
-				}
-			)}
-		</>
+			<div className={expanded ? '' : 'hidden'}>
+				{Object.entries(principle.guidelines).map(
+					([key, value]: [key: string, value: any]) => {
+						return (
+							<Guideline
+								guideline={value}
+								guidelineNumber={key}
+								principleNumber={principleNumber}
+							/>
+						);
+					}
+				)}
+			</div>
+		</button>
 	);
 }

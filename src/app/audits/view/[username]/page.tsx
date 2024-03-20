@@ -1,6 +1,8 @@
-import { getAudits } from '@/app/api/db';
+import {getAudits, getAuditsByPrinciple } from '@/app/api/db';
 import Principle from '@/app/components/Principle';
 import Wcag from '@/app/wcag.json';
+
+
 
 function getPrinciplesAsArray(): Array<any> {
 	let arr = [];
@@ -50,6 +52,7 @@ export default async function ViewPage({
 						username={params.username}
 						principle={principle}
 						principleNumber={index + 1}
+						audits={getAuditsByPrinciple(audits, index + 1)}
 					/>
 				);
 			})}

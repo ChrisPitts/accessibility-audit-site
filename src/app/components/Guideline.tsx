@@ -25,7 +25,7 @@ export default function Guideline({
 				</h3>
 				<p>{guideline.description}</p>
 			</button>
-			<div className={expanded ? '' : 'hidden'}>
+			<div className={expanded ? '' : 'hidden'} aria-expanded={expanded}>
 				{Object.entries(guideline.sections).map(
 					([key, value]: [key: string, value: any]) => {
 						return (

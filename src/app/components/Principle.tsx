@@ -33,12 +33,13 @@ export default function Principle({
 
 	return (
 		<>
-			<button className='block w-full' onClick={toggleExpand}>
-				<div className='dropdown-container'>
+			<button className='principle-container' onClick={toggleExpand}>
+				<div>
 					<div className='container-top'>
 						<h2 className='text-lg font-extrabold'>
 							Principle {principleNumber}: {principle.title}
 						</h2>
+						<p>{principle.description}</p>
 						<p>
 							Passed:
 							<span
@@ -53,9 +54,8 @@ export default function Principle({
 								{passedAudits}/{audits.length}
 							</span>
 						</p>
+						<div className={`dropdown-arrow dropdown-arrow__${expanded ? 'up' : 'down'}`} aria-expanded={expanded}></div>
 					</div>
-
-					<p>{principle.description}</p>
 				</div>
 			</button>
 			<div className={expanded ? '' : 'hidden'}>

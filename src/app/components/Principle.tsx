@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Guideline from './Guideline';
 import { Audit } from '@prisma/client';
+import Dropdown from './Dropdown';
 
 export default function Principle({
 	principle,
@@ -31,46 +32,62 @@ export default function Principle({
 
 	let circleColor = ratio === 1 ? 'green' : ratio > 0.6 ? 'yellow' : 'red';
 
+	const headerContent = (
+		<div className='flex justify-between items-center'>
+			<div>
+				<h2 className='text-lg font-extrabold'>
+					Principle {principleNumber}: {principle.title}
+				</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde hic
+					numquam consequuntur quos. Inventore nostrum, delectus neque ullam
+					mollitia eaque sint aliquam exercitationem laboriosam, magni laborum
+					soluta totam nam harum nisi molestiae ex quibusdam commodi. Doloremque
+					sunt cumque animi sapiente neque aliquid vel reprehenderit dolorum
+					sint debitis! Qui, quae perferendis?
+				</p>
+			</div>
+
+			<span
+				className='audit-circle m-4'
+				style={
+					{
+						'--data-progress': ratio,
+						'--data-color': circleColor,
+					} as React.CSSProperties
+				}
+			>
+				{passedAudits}/{audits.length}
+			</span>
+		</div>
+	);
+
+	const bodyContent = (
+		<>
+			{Object.entries(principle.guidelines).map(
+				([key, value]: [key: string, value: any]) => {
+					return (
+						<Guideline
+							guideline={value}
+							guidelineNumber={key}
+							principleNumber={principleNumber}
+						/>
+					);
+				}
+			)}
+		</>
+	);
+
+
 	return (
 		<>
-			<button className='principle-container' onClick={toggleExpand}>
-				<div>
-					<div className='container-top'>
-						<h2 className='text-lg font-extrabold'>
-							Principle {principleNumber}: {principle.title}
-						</h2>
-						<p>{principle.description}</p>
-						<p>
-							Passed:
-							<span
-								className='audit-circle m-4'
-								style={
-									{
-										'--data-progress': ratio,
-										'--data-color': circleColor,
-									} as React.CSSProperties
-								}
-							>
-								{passedAudits}/{audits.length}
-							</span>
-						</p>
-						<div className={`dropdown-arrow dropdown-arrow__${expanded ? 'up' : 'down'}`} aria-expanded={expanded}></div>
-					</div>
-				</div>
-			</button>
-			<div className={expanded ? '' : 'hidden'}>
-				{Object.entries(principle.guidelines).map(
-					([key, value]: [key: string, value: any]) => {
-						return (
-							<Guideline
-								guideline={value}
-								guidelineNumber={key}
-								principleNumber={principleNumber}
-							/>
-						);
-					}
-				)}
-			</div>
+			<Dropdown
+				classList='principle-container'
+				headerContent={headerContent}
+				bodyContent={bodyContent}
+				key={principleNumber}
+			/>
+			
 		</>
 	);
 }

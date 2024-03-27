@@ -53,6 +53,7 @@ export default async function ViewPage({
 						principle={principle}
 						principleNumber={index + 1}
 						audits={getAuditsByPrinciple(audits, index + 1)}
+						key={index + 1}
 					/>
 				);
 			})}

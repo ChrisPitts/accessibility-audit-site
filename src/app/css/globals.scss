@@ -9,7 +9,7 @@
 }
 
 .audit-circle {
-    --size: 3rem;
+    --size: 3.5rem;
 
 	text-align: center;
 	background: linear-gradient(black 0 0) padding-box,
@@ -21,13 +21,15 @@
 	border: 0.5rem solid transparent;
 	border-radius: 50%;
 	color: white;
-    display: inline-block;
-    // display: grid;
-    // place-items: center;
+    display: grid;
+    place-items: center;
+    min-height: var(--size);
     height: var(--size);
     line-height: 2rem;
     position: relative;
-	width: var(--size);
+	min-width: var(--size);
+    width: var(--size);
+    // box-sizing: content-box;
 }
 
 

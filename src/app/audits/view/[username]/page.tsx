@@ -1,5 +1,5 @@
-import {getAudits, getAuditsByPrinciple } from '@/app/api/db';
-import Principle from '@/app/components/Principle';
+import {getAudits, getAuditsByPrinciple } from '@/api/db';
+import Principle from '@/components/Principle';
 import Wcag from '@/app/wcag.json';
 
 

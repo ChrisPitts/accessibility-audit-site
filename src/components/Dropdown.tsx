@@ -1,7 +1,7 @@
 'use client';
 
 import { CSSProperties, ReactNode, useState } from 'react';
-import '../css/components/Dropdown.scss';
+import '../app/css/components/Dropdown.scss';
 
 export default function Dropdown({
 	headerContent,

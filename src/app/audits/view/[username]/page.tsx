@@ -49,7 +49,6 @@ export default async function ViewPage({
 			{getPrinciplesAsArray().map((principle, index) => {
 				return (
 					<Principle
-						username={params.username}
 						principle={principle}
 						principleNumber={index + 1}
 						audits={getAuditsByPrinciple(audits, index + 1)}

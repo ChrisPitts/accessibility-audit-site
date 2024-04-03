@@ -1,51 +1,34 @@
-'use client';
-import { useState } from 'react';
-import Guideline from './Guideline';
 import { Audit } from '@prisma/client';
 import Dropdown from './Dropdown';
+import AuditList from './AuditList';
 
 export default function Principle({
 	principle,
 	principleNumber,
-	username,
 	audits,
 }: {
 	principle: { title: string; description: string; guidelines: any };
 	principleNumber: number;
-	username: string;
 	audits: Audit[];
 }) {
-	// console.log(`Principle ${principleNumber}`, audits)
-	let passedAudits = 0;
+	let passedAudits = [];
+	let failedAudits = [];
 	for (let i = 0; i < audits.length; i++) {
-		if (audits[i].pass) passedAudits++;
+		if (audits[i].pass) passedAudits.push(audits[i]);
+		else failedAudits.push(audits[i]);
 	}
 
-	const ratio = audits.length > 0 ? passedAudits / audits.length : 0;
-
-	const [expanded, setExpanded] = useState(false);
-
-	let toggleExpand = () => {
-		console.log(!expanded);
-		setExpanded(!expanded);
-	};
+	const ratio = audits.length > 0 ? passedAudits.length / audits.length : 0;
 
 	let circleColor = ratio === 1 ? 'green' : ratio > 0.6 ? 'yellow' : 'red';
 
 	const headerContent = (
-		<div className='flex justify-between items-center'>
+		<div className='flex justify-between items-center w-full'>
 			<div>
 				<h2 className='text-lg font-extrabold'>
 					Principle {principleNumber}: {principle.title}
 				</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde hic
-					numquam consequuntur quos. Inventore nostrum, delectus neque ullam
-					mollitia eaque sint aliquam exercitationem laboriosam, magni laborum
-					soluta totam nam harum nisi molestiae ex quibusdam commodi. Doloremque
-					sunt cumque animi sapiente neque aliquid vel reprehenderit dolorum
-					sint debitis! Qui, quae perferendis?
-				</p>
+				<p>{principle.description}</p>
 			</div>
 
 			<span
@@ -57,27 +40,12 @@ export default function Principle({
 					} as React.CSSProperties
 				}
 			>
-				{passedAudits}/{audits.length}
+				{passedAudits.length}/{audits.length}
 			</span>
 		</div>
 	);
 
-	const bodyContent = (
-		<>
-			{Object.entries(principle.guidelines).map(
-				([key, value]: [key: string, value: any]) => {
-					return (
-						<Guideline
-							guideline={value}
-							guidelineNumber={key}
-							principleNumber={principleNumber}
-						/>
-					);
-				}
-			)}
-		</>
-	);
-
+	const bodyContent = <AuditList principle={principleNumber} audits={audits} />;
 
 	return (
 		<>
@@ -86,8 +54,8 @@ export default function Principle({
 				headerContent={headerContent}
 				bodyContent={bodyContent}
 				key={principleNumber}
+				arrowIsLight={true}
 			/>
-			
 		</>
 	);
 }

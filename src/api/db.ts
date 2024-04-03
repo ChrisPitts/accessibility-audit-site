@@ -13,7 +13,7 @@ const prisma =
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
 export async function getAudits(username: string): Promise<Audit[]> {
-	return prisma.$queryRaw`SELECT * FROM Audit WHERE username=${username}`;
+	return prisma.$queryRaw`SELECT * FROM Audit WHERE username=${username} ORDER BY principle, guideline, section`;
 }
 
 

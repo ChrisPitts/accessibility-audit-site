@@ -3,4 +3,34 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    width: 100%;
+}
+
+.dropdown-arrow {
+	display: inline-block;
+	padding: 3px;
+	width: 10px;
+	height: 10px;
+
+    &__white{
+        border: solid white;
+        border-width: 0 3px 3px 0;
+    }
+
+    &__black{
+        border: solid black;
+        border-width: 0 3px 3px 0;
+    }
+
+	&__down {
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+	}
+
+	&__up {
+		transform: rotate(-135deg);
+		-webkit-transform: rotate(-135deg);
+	}
+
+    
 }

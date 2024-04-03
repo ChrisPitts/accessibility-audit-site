@@ -54,21 +54,3 @@ button {
 	text-align: left;
 }
 
-.dropdown-arrow {
-	border: solid white;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	width: 10px;
-	height: 10px;
-
-	&__down {
-		transform: rotate(45deg);
-		-webkit-transform: rotate(45deg);
-	}
-
-	&__up {
-		transform: rotate(-135deg);
-		-webkit-transform: rotate(-135deg);
-	}
-}

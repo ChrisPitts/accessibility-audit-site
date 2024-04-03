@@ -8,18 +8,20 @@ export default function Dropdown({
 	bodyContent,
 	classList,
 	key,
+	arrowIsLight,
 }: {
 	headerContent: ReactNode;
 	bodyContent: ReactNode;
 	classList: string;
 	key: number;
+	arrowIsLight: boolean;
 }) {
 	const [expanded, setExpanded] = useState(false);
 	const toggleExpand = () => {
 		setExpanded(!expanded);
 	};
 	return (
-		<div>
+		<div className='w-full'>
 			<button
 				aria-expanded={expanded}
 				aria-controls={`dropdown-${key}`}
@@ -28,13 +30,13 @@ export default function Dropdown({
 			>
 				{headerContent}
 				<div
-					className={`dropdown-arrow dropdown-arrow__${
+					className={`dropdown-arrow__${arrowIsLight ? 'white' : 'black'} dropdown-arrow dropdown-arrow__${
 						expanded ? 'up' : 'down'
 					}`}
 					aria-expanded={expanded}
 				></div>
 			</button>
-            <div id={`dropdown-${key}`} className={expanded ? '' : 'hidden'}>
+			<div id={`dropdown-${key}`} className={`p-2 ${ expanded? '': 'hidden' }`}>
                 {bodyContent}
             </div>
 		</div>
